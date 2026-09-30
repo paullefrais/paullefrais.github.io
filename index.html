@@ -3,142 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Paul LEfrais | Étudiant Ingénieur, Data Analyst chez Airbus </title>
-<meta name="description" content="Élève inGénieur à ISAE-Supaero et data analyst en alternance chez Airbus. Projets : dureté des métaux par LIBS, raisonnement en IA, aide à la décision pour les trails pyrénéens.">
-<meta property="og:title" content="Paul Lefrais | De la mesure à la décision">
+<title>Paul Lefrais | Étudiant ingénieur, Data Analyst chez Airbus</title>
+<meta name="description" content="Élève ingénieur à ISAE-Supaero et data analyst en alternance chez Airbus. Projets : dureté des métaux par LIBS, raisonnement en IA, aide à la décision pour les trails pyrénéens.">
+<meta property="og:title" content="Paul Lefrais | Étudiant ingénieur, Data Analyst chez Airbus">
 <meta property="og:description" content="Élève ingénieur ISAE-Supaero, data analyst en alternance chez Airbus.">
 <meta property="og:image" content="photo.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23172231'/><path d='M4 24 L10 24 L13 10 L16 24 L19 18 L22 24 L28 24' stroke='%23F2B632' stroke-width='2.5' fill='none'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --mist:#EDF1F4; --paper:#FFFFFF; --ink:#172231; --muted:#556476;
-  --rule:#D2DAE2; --accent:#2448B8; --signal:#E0A21A;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --cond:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --mist:#0F1722; --paper:#162131; --ink:#E6ECF2; --muted:#9AA9BA;
-    --rule:#2A3950; --accent:#7F9CFF; --signal:#F2B632;
-  }
-}
-:root[data-theme="dark"]{
-  --mist:#0F1722; --paper:#162131; --ink:#E6ECF2; --muted:#9AA9BA;
-  --rule:#2A3950; --accent:#7F9CFF; --signal:#F2B632;
-}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0; background:var(--mist); color:var(--ink); font:400 1.0625rem/1.6 var(--sans); -webkit-font-smoothing:antialiased}
-img{max-width:100%; height:auto; display:block}
-a{color:var(--accent); text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:3px solid var(--signal); outline-offset:3px; border-radius:4px}
-.wrap{max-width:1040px; margin:0 auto; padding:0 24px}
-
-/* ---------- Hero ---------- */
-.hero{padding:64px 0 24px}
-.id{display:flex; gap:28px; align-items:center}
-.id img{width:112px; height:112px; border-radius:50%; object-fit:cover; flex:none; border:3px solid var(--paper); box-shadow:0 0 0 1px var(--rule)}
-h1{font:700 clamp(2.8rem,7vw,5rem)/0.95 var(--cond); letter-spacing:-0.01em; margin:0}
-.role{margin:10px 0 0; color:var(--muted); font-size:1.05rem}
-.pitch{max-width:62ch; font-size:clamp(1.15rem,2.2vw,1.35rem); line-height:1.5; margin:36px 0 28px}
-.actions{display:flex; flex-wrap:wrap; gap:10px}
-.btn{display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:6px; font:500 0.95rem var(--sans); text-decoration:none; border:1px solid var(--rule); color:var(--ink); background:var(--paper)}
-.btn:hover{border-color:var(--ink)}
-.btn.primary{background:var(--ink); color:var(--mist); border-color:var(--ink)}
-.btn.primary:hover{background:var(--accent); border-color:var(--accent)}
-
-/* ---------- Spectrum ---------- */
-.spec-box{margin:48px 0 0; overflow-x:auto; -webkit-overflow-scrolling:touch}
-.spectrum{width:100%; min-width:760px; height:auto; display:block}
-.spectrum .axis,.spectrum .tick{stroke:var(--rule); stroke-width:1.5}
-.spectrum .year{font:500 12px var(--sans); fill:var(--muted); text-anchor:middle}
-.spectrum .trace{fill:none; stroke:var(--ink); stroke-width:1.8; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:0}
-.spectrum .lead{stroke:var(--signal); stroke-width:2}
-.spectrum .p1{font:600 13px var(--cond); fill:var(--ink); text-anchor:middle}
-.spectrum .p2{font:400 11.5px var(--sans); fill:var(--muted); text-anchor:middle}
-.spectrum .current .p1{fill:var(--accent)}
-.spectrum .current .lead{stroke:var(--accent); stroke-dasharray:3 3}
-.swipe{display:none}
-@media (max-width:760px){.swipe{display:inline}}
-.spec-caption{font-size:0.9rem; color:var(--muted); margin:6px 0 0}
-@media (prefers-reduced-motion:no-preference){
-  .spectrum .trace{stroke-dashoffset:1; animation:draw 2.2s cubic-bezier(.45,.05,.25,1) .2s forwards}
-  .spectrum .peak{opacity:0; animation:show .5s ease forwards}
-  .spectrum .peak:nth-of-type(1){animation-delay:.6s}
-  .spectrum .peak:nth-of-type(2){animation-delay:.9s}
-  .spectrum .peak:nth-of-type(3){animation-delay:1.05s}
-  .spectrum .peak:nth-of-type(4){animation-delay:1.35s}
-  .spectrum .peak:nth-of-type(5){animation-delay:1.5s}
-  .spectrum .peak:nth-of-type(6){animation-delay:2s}
-}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes show{to{opacity:1}}
-
-/* ---------- Sections ---------- */
-section{padding:72px 0 8px}
-h2{font:700 clamp(1.9rem,4vw,2.6rem)/1.1 var(--cond); margin:0 0 8px}
-.lede{color:var(--muted); margin:0 0 40px; max-width:60ch}
-
-/* Projects */
-.project{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:40px; align-items:start; padding:40px 0; border-top:1px solid var(--rule)}
-.project:nth-of-type(even) .fig{order:2}
-.fig{background:var(--paper); border:1px solid var(--rule); border-radius:10px; padding:20px; display:flex; align-items:center; justify-content:center; min-height:220px}
-.fig.logo img{max-width:200px}
-.fig svg{width:100%; height:auto}
-.project h3{font:600 1.55rem/1.2 var(--cond); margin:0 0 4px}
-.ctx{color:var(--muted); font-size:0.95rem; margin:0 0 18px}
-.status{display:inline-block; font:500 0.8rem var(--sans); color:var(--accent); border:1px solid currentColor; border-radius:99px; padding:1px 10px; margin-left:8px; vertical-align:middle}
-.project dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 16px}
-.project dt{font-weight:600; font-size:0.95rem}
-.project dd{margin:0; max-width:58ch}
-.tools{display:flex; flex-wrap:wrap; gap:6px; margin:18px 0 0; padding:0; list-style:none}
-.tools li{font-size:0.85rem; padding:3px 10px; border-radius:4px; background:var(--paper); border:1px solid var(--rule)}
-.links{margin:16px 0 0; display:flex; gap:18px; flex-wrap:wrap; font-weight:500}
-
-/* Timeline */
-.cols{display:grid; grid-template-columns:1fr 1fr; gap:48px}
-h3.col{font:600 1.2rem var(--cond); margin:0 0 20px; color:var(--muted)}
-.tl{list-style:none; margin:0; padding:0; border-left:2px solid var(--rule)}
-.tl li{position:relative; padding:0 0 28px 22px}
-.tl li::before{content:""; position:absolute; left:-7px; top:7px; width:12px; height:12px; border-radius:50%; background:var(--mist); border:2px solid var(--ink)}
-.tl li.now::before{background:var(--signal); border-color:var(--signal)}
-.when{font-size:0.88rem; color:var(--muted)}
-.tl strong{display:block; font:600 1.1rem/1.3 var(--cond); margin:2px 0 4px}
-.tl p{margin:0; font-size:0.97rem}
-
-/* Skills */
-.skills{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px}
-.skills h3{font:600 1.15rem var(--cond); margin:0 0 10px}
-.skills ul{margin:0; padding:0; list-style:none}
-.skills li{padding:7px 0; border-bottom:1px solid var(--rule); font-size:0.97rem}
-
-/* Contact */
-.contact{margin:72px 0 0; padding:56px 0 64px; background:var(--ink); color:var(--mist)}
-.contact h2{color:var(--mist)}
-.contact p{max-width:56ch; opacity:.85}
-.contact .btn{background:transparent; color:var(--mist); border-color:rgba(255,255,255,.35)}
-.contact .btn:hover{border-color:var(--signal)}
-.contact .btn.primary{background:var(--signal); color:#172231; border-color:var(--signal)}
-footer{font-size:0.85rem; opacity:.6; margin-top:40px}
-
-@media (max-width:760px){
-  .hero{padding-top:40px}
-  .id{gap:18px}
-  .id img{width:84px; height:84px}
-  .project{grid-template-columns:1fr; gap:24px}
-  .project:nth-of-type(even) .fig{order:0}
-  .cols,.skills{grid-template-columns:1fr; gap:36px}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero"><div class="wrap">
+<!-- ============ Barre de navigation (identique sur les deux pages) ============ -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Paul Lefrais</a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html#projets">Projets</a>
+      <a href="experiences.html">Expériences</a>
+      <a href="index.html#competences">Compétences</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero"><div class="wrap">
   <div class="id">
     <img src="photo.jpg" alt="Photo de Paul Lefrais" width="112" height="112">
     <div>
@@ -146,42 +37,49 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
       <p class="role">Élève ingénieur à ISAE-Supaero, data analyst en alternance chez Airbus</p>
     </div>
   </div>
-  <p class="pitch"> Ingénieur généraliste de formation, j'ai centré mes projets personnels et professionnels autour de l'utilisation de la données à des fins variées. Les ressources ci-dessous vous permettront d'en apprendre davantage sur mes projets et mes expériences professionnelles.   </p>
-  <nav class="actions" aria-label="Liens principaux">
+  <p class="pitch">Ingénieur généraliste de formation, j'ai centré mes projets personnels et professionnels autour de l'utilisation de la donnée à des fins variées. Les ressources ci-dessous vous permettront d'en apprendre davantage sur mes projets et mes expériences professionnelles.</p>
+  <div class="actions">
     <a class="btn primary" href="#projets">Voir mes projets</a>
+    <a class="btn" href="experiences.html">Mes expériences</a>
     <a class="btn" href="cv.pdf" download>Télécharger mon CV</a>
     <a class="btn" href="https://www.linkedin.com/in/paullefrais" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn" href="https://github.com/paullefrais" target="_blank" rel="noopener">GitHub</a>
-  </nav>
-  <figure class="spec-box" style="margin-left:0;margin-right:0">
-    <svg class="spectrum" viewBox="0 0 1000 250" role="img" aria-labelledby="spec-t spec-d"><title id="spec-t">Mon parcours sous forme de spectre</title><desc id="spec-d">Chaque pic correspond à une étape : IUT Mesures Physiques, ETS Montréal, CNRS, Airbus Defence and Space, ISAE-Supaero et Airbus, plateforme Pyrénées.</desc>
-<line class="axis" x1="20" y1="205" x2="980" y2="205"/>
-<line class="tick" x1="30" y1="205" x2="30" y2="211"/><text class="year" x="30" y="229">2021</text>
-<line class="tick" x1="172" y1="205" x2="172" y2="211"/><text class="year" x="172" y="229">2022</text>
-<line class="tick" x1="315" y1="205" x2="315" y2="211"/><text class="year" x="315" y="229">2023</text>
-<line class="tick" x1="457" y1="205" x2="457" y2="211"/><text class="year" x="457" y="229">2024</text>
-<line class="tick" x1="600" y1="205" x2="600" y2="211"/><text class="year" x="600" y="229">2025</text>
-<line class="tick" x1="742" y1="205" x2="742" y2="211"/><text class="year" x="742" y="229">2026</text>
-<line class="tick" x1="885" y1="205" x2="885" y2="211"/><text class="year" x="885" y="229">2027</text>
-<path class="trace" pathLength="1" d="M20,204.2 L23,204.6 L26,203.7 L29,204.4 L32,204.7 L35,203.7 L38,202.1 L41,202.4 L44,202.5 L47,204.2 L50,203.2 L53,204.0 L56,204.3 L59,204.5 L62,204.1 L65,202.0 L68,202.3 L71,202.3 L74,202.3 L77,204.1 L80,203.7 L83,202.8 L86,202.4 L89,202.0 L92,201.9 L95,204.2 L98,202.5 L101,202.2 L104,202.6 L107,203.4 L110,202.3 L113,203.1 L116,200.2 L119,199.7 L122,199.6 L125,198.4 L128,192.8 L131,185.6 L134,165.6 L137,147.5 L140,169.8 L143,187.5 L146,194.4 L149,198.3 L152,200.9 L155,201.4 L158,200.6 L161,203.3 L164,203.6 L167,202.1 L170,203.2 L173,202.6 L176,202.9 L179,203.3 L182,201.4 L185,203.9 L188,203.3 L191,203.9 L194,202.7 L197,203.8 L200,203.5 L203,202.4 L206,203.7 L209,203.0 L212,201.9 L215,204.3 L218,204.5 L221,204.0 L224,202.4 L227,202.8 L230,203.9 L233,203.6 L236,204.1 L239,203.2 L242,204.5 L245,202.5 L248,201.9 L251,201.7 L254,202.3 L257,201.6 L260,204.4 L263,203.6 L266,201.5 L269,202.1 L272,203.1 L275,201.5 L278,202.4 L281,201.7 L284,203.2 L287,203.4 L290,202.6 L293,203.3 L296,202.4 L299,200.4 L302,202.0 L305,202.5 L308,201.8 L311,200.5 L314,197.2 L317,196.0 L320,191.4 L323,181.6 L326,154.5 L329,128.0 L332,154.6 L335,180.5 L338,191.3 L341,195.8 L344,196.7 L347,199.6 L350,200.6 L353,199.5 L356,200.3 L359,197.9 L362,200.0 L365,198.0 L368,195.9 L371,194.7 L374,188.9 L377,182.6 L380,165.8 L383,124.5 L386,79.3 L389,122.2 L392,164.9 L395,181.1 L398,189.4 L401,194.7 L404,198.5 L407,199.4 L410,200.4 L413,201.2 L416,201.6 L419,200.1 L422,202.5 L425,203.0 L428,200.5 L431,201.7 L434,200.5 L437,202.4 L440,200.9 L443,201.7 L446,201.3 L449,201.4 L452,202.1 L455,203.3 L458,202.8 L461,200.7 L464,200.5 L467,200.2 L470,201.7 L473,200.4 L476,199.4 L479,199.2 L482,197.5 L485,196.5 L488,193.0 L491,186.7 L494,174.4 L497,140.9 L500,106.4 L503,143.4 L506,172.2 L509,185.7 L512,192.7 L515,197.6 L518,196.8 L521,200.2 L524,198.3 L527,199.6 L530,201.6 L533,201.4 L536,199.9 L539,199.9 L542,199.1 L545,198.0 L548,199.4 L551,198.8 L554,194.2 L557,193.7 L560,185.5 L563,176.4 L566,148.5 L569,91.3 L572,62.3 L575,126.7 L578,164.7 L581,183.3 L584,189.7 L587,194.9 L590,195.7 L593,197.6 L596,199.6 L599,200.2 L602,202.2 L605,202.6 L608,201.2 L611,201.8 L614,200.8 L617,201.8 L620,203.3 L623,202.7 L626,201.6 L629,202.4 L632,204.0 L635,201.6 L638,201.7 L641,203.9 L644,202.6 L647,203.1 L650,201.9 L653,203.4 L656,203.6 L659,202.9 L662,201.4 L665,204.1 L668,204.0 L671,202.5 L674,201.7 L677,202.8 L680,203.0 L683,201.7 L686,202.0 L689,204.1 L692,201.6 L695,203.7 L698,203.3 L701,201.7 L704,202.9 L707,201.7 L710,203.6 L713,201.4 L716,203.4 L719,203.4 L722,202.3 L725,202.6 L728,201.9 L731,200.7 L734,201.1 L737,203.0 L740,201.8 L743,200.8 L746,200.7 L749,199.5 L752,199.6 L755,200.1 L758,198.6 L761,195.4 L764,194.9 L767,190.9 L770,186.0 L773,180.5 L776,169.5 L779,152.3 L782,130.7 L785,117.2 L788,132.4 L791,153.5 L794,171.9 L797,180.6 L800,187.2 L803,191.7 L806,194.9 L809,197.7 L812,197.1 L815,199.4 L818,199.2 L821,201.4 L824,202.0 L827,202.1 L830,200.4 L833,202.6 L836,200.6 L839,202.4 L842,201.9 L845,202.7 L848,202.0 L851,203.7 L854,202.8 L857,201.3 L860,203.7 L863,202.3 L866,203.3 L869,203.4 L872,204.3 L875,204.4 L878,201.6 L881,202.0 L884,202.1 L887,202.1 L890,201.7 L893,204.1 L896,202.9 L899,203.1 L902,202.9 L905,201.8 L908,202.4 L911,201.8 L914,204.4 L917,202.8 L920,202.7 L923,202.5 L926,202.9 L929,202.3 L932,203.9 L935,202.0 L938,203.6 L941,203.0 L944,202.1 L947,202.7 L950,203.9 L953,204.1 L956,203.8 L959,202.9 L962,201.8 L965,202.1 L968,203.6 L971,203.6 L974,202.4 L977,204.0 L980,203.6"/>
-<g class="peak"><line class="lead" x1="137" y1="144" x2="137" y2="134"/><text class="p1" x="137" y="114">IUT Mesures Physiques</text><text class="p2" x="137" y="129">Bordeaux</text></g>
-<g class="peak"><line class="lead" x1="329" y1="124" x2="329" y2="114"/><text class="p1" x="329" y="94">ETS Montréal</text><text class="p2" x="329" y="109">échange</text></g>
-<g class="peak"><line class="lead" x1="386" y1="74" x2="386" y2="64"/><text class="p1" x="386" y="44">CNRS</text><text class="p2" x="386" y="59">dureté par LIBS</text></g>
-<g class="peak"><line class="lead" x1="500" y1="104" x2="500" y2="94"/><text class="p1" x="500" y="74">Airbus DS</text><text class="p2" x="500" y="89">contamination</text></g>
-<g class="peak"><line class="lead" x1="571" y1="54" x2="571" y2="44"/><text class="p1" x="571" y="24">ISAE-Supaero + Airbus</text><text class="p2" x="571" y="39">alternance</text></g>
-<g class="peak current"><line class="lead" x1="785" y1="114" x2="785" y2="104"/><text class="p1" x="785" y="84">Plateforme Pyrénées</text><text class="p2" x="785" y="99">en cours</text></g>
-</svg>
-  </figure>
-  <p class="spec-caption">Mon parcours tracé comme un spectre d'émission : chaque raie correspond à une étape.<span class="swipe"> Fais glisser le graphique pour voir la suite.</span></p>
-</div></header>
+  </div>
+
+  <!-- ============ Frise chronologique ============ -->
+  <div class="frise-head">
+    <h2>Parcours</h2>
+    <p class="hint-desk">Survolez une étape pour en voir l'aperçu.</p>
+  </div>
+  <div class="frise">
+    <div class="lanes" id="lanes"></div>
+    <div class="track-scroll" id="track-scroll"><div class="track" id="track"></div></div>
+  </div>
+  <p class="frise-foot">
+    <span><span class="today-key"></span>Aujourd'hui<span class="swipe">. Faites glisser la frise et touchez une étape.</span></span>
+    <a href="experiences.html">Voir le détail de mes expériences</a>
+  </p>
+</div></div>
+
+<!-- Carte d'aperçu, remplie par le script en bas de page -->
+<div class="peek" id="peek" hidden>
+  <button class="peek-close" id="peek-close" type="button" aria-label="Fermer l'aperçu">×</button>
+  <img id="peek-img" alt="">
+  <div class="peek-body">
+    <p class="peek-kind" id="peek-kind"></p>
+    <h3 id="peek-title"></h3>
+    <p id="peek-text"></p>
+    <a class="more" id="peek-link" href="#">Lire le détail</a>
+  </div>
+</div>
 
 <main>
 <section id="projets"><div class="wrap">
   <h2>Projets</h2>
-  <p class="lede">Les 3 projets suivants ont été réalisés à des périodes différentes de mon cursus (voir graphique chronologique ci-dessus)</p>
+  <p class="lede">Les 3 projets suivants ont été réalisés à des périodes différentes de mon cursus (voir la frise chronologique ci-dessus).</p>
 
-  <article class="project">
-    <div class="fig logo"><img src="libstick.png" alt="Logo de l'application LIBStick" width="232" height="264" loading="lazy"></div>
+  <article class="project" id="projet-libs">
+    <div class="fig logo"><img src="images/libstick.png" alt="Logo de l'application LIBStick" width="240" height="277" loading="lazy"></div>
     <div>
       <h3>Sujet de recherche : mesurer la dureté d'un matériau grâce à la spectrométrie de plasma induite par laser (LIBS)</h3>
       <p class="ctx">CNRS, Archéosciences Bordeaux (UMR 6034), 2023</p>
@@ -191,14 +89,22 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
         <dt>Livrables</dt><dd>Rapport de recherche et présentation des résultats.</dd>
       </dl>
       <ul class="tools"><li>Spectroscopie LIBS</li><li>Analyses statistiques</li><li>Calcul d'incertitudes</li><li>LIBStick</li></ul>
-      <!-- Dépose tes fichiers dans le dépôt puis retire les balises de commentaire :
-      <p class="links"><a href="libs-rapport.pdf">Lire le rapport</a><a href="libs-diapo.pdf">Voir la présentation</a></p>
-      -->
+      <!-- Documents : chaque lien s'affiche automatiquement dès que le fichier existe dans le dossier docs/ -->
+      <div class="docs">
+        <a class="doc" data-doc href="docs/libs-rapport.pdf" target="_blank" rel="noopener">
+          <img class="doc-thumb" src="docs/libs-rapport.jpg" alt="" data-type="PDF">
+          <span><strong>Rapport de recherche</strong><small>PDF, s'ouvre dans un nouvel onglet</small></span>
+        </a>
+        <a class="doc" data-doc href="docs/libs-presentation.pdf" target="_blank" rel="noopener">
+          <img class="doc-thumb" src="docs/libs-presentation.jpg" alt="" data-type="PDF">
+          <span><strong>Présentation</strong><small>PDF, s'ouvre dans un nouvel onglet</small></span>
+        </a>
+      </div>
     </div>
   </article>
 
-  <article class="project">
-    <div class="fig"><img src="brain.png" alt="Schéma du système BRAIN : une grille d'entrée passe par un module de perception (géométrie, couleur) puis un module de raisonnement qui produit la grille de sortie" width="508" height="204" loading="lazy"></div>
+  <article class="project" id="projet-brain">
+    <div class="fig"><img src="images/brain.png" alt="Schéma du système BRAIN : une grille d'entrée passe par un module de perception (géométrie, couleur) puis un module de raisonnement qui produit la grille de sortie" width="1762" height="766" loading="lazy"></div>
     <div>
       <h3>BRAIN : apprendre à une IA à raisonner</h3>
       <p class="ctx">Bringing Reasoning to Artificial Intelligence Networks</p>
@@ -208,15 +114,20 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
         <dt>Livrables</dt><dd>Système fonctionnel et soutenance.</dd>
       </dl>
       <ul class="tools"><li>Intelligence artificielle</li><li>Raisonnement symbolique</li><li>Vision par objets</li></ul>
-      <!-- <p class="links"><a href="brain-soutenance.pdf">Voir la soutenance</a></p> -->
+      <div class="docs">
+        <a class="doc" data-doc href="docs/brain-soutenance.pdf" target="_blank" rel="noopener">
+          <img class="doc-thumb" src="docs/brain-soutenance.jpg" alt="" data-type="PDF">
+          <span><strong>Diaporama de soutenance</strong><small>PDF, s'ouvre dans un nouvel onglet</small></span>
+        </a>
+      </div>
     </div>
   </article>
 
-  <article class="project">
+  <article class="project" id="projet-pyrenees">
     <div class="fig">
       <svg viewBox="0 0 420 200" role="img" aria-label="Profil d'altitude d'un trail avec trois ravitaillements">
-        <path d="M10 170 L60 150 L95 90 L130 110 L175 40 L215 75 L250 60 L290 120 L330 100 L370 150 L410 165" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
         <path d="M10 170 L60 150 L95 90 L130 110 L175 40 L215 75 L250 60 L290 120 L330 100 L370 150 L410 165 L410 185 L10 185 Z" fill="var(--rule)" opacity=".45"/>
+        <path d="M10 170 L60 150 L95 90 L130 110 L175 40 L215 75 L250 60 L290 120 L330 100 L370 150 L410 165" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
         <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--muted)" text-anchor="middle">
           <circle cx="95" cy="90" r="6" fill="var(--signal)"/><text x="95" y="72">Ravito 1</text>
           <circle cx="215" cy="75" r="6" fill="var(--signal)"/><text x="215" y="97">Ravito 2</text>
@@ -237,29 +148,6 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
   </article>
 </div></section>
 
-<section id="parcours"><div class="wrap">
-  <h2>Parcours</h2>
-  <p class="lede">De la mesure physique à l'ingénierie data.</p>
-  <div class="cols">
-    <div>
-      <h3 class="col">Expériences</h3>
-      <ol class="tl" reversed>
-        <li class="now"><span class="when">2024 à 2027</span><strong>Alternance chez Airbus, Toulouse</strong><p>Manufacturing Engineering, FAL A350. Business Data Analyst sur Skywise (Palantir Foundry) : conception d'applications en production pour les équipes.</p></li>
-        <li><span class="when">Mars à juin 2024</span><strong>Stage chez Airbus Defence and Space</strong><p>Laboratoire contamination : suivi de la propreté des satellites en fabrication, validation d'une nouvelle substance pour l'étalonnage d'un spectromètre FTIR.</p></li>
-        <li><span class="when">Mai à juillet 2023</span><strong>Stage au CNRS, Archéosciences Bordeaux</strong><p>Développement de mesures de dureté sur des alliages cuivreux par LIBS.</p></li>
-      </ol>
-    </div>
-    <div>
-      <h3 class="col">Formation</h3>
-      <ol class="tl" reversed>
-        <li class="now"><span class="when">2024 à 2027</span><strong>ISAE-Supaero, Toulouse</strong><p>Diplôme d'ingénieur : industrialisation et méthodes pour l'aéronautique et l'espace.</p></li>
-        <li><span class="when">Décembre 2022 à avril 2023</span><strong>École de technologie supérieure, Montréal</strong><p>Échange universitaire en génie mécanique.</p></li>
-        <li><span class="when">2021 à 2024</span><strong>IUT Mesures Physiques, Bordeaux</strong><p>BUT parcours international, option matériaux et contrôle physico-chimique.</p></li>
-      </ol>
-    </div>
-  </div>
-</div></section>
-
 <section id="competences"><div class="wrap">
   <h2>Compétences</h2>
   <p class="lede">Ce que j'utilise au quotidien et ce que je sais mettre en œuvre.</p>
@@ -271,7 +159,7 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
 </div></section>
 </main>
 
-<div class="contact">
+<div class="contact" id="contact">
   <div class="wrap">
     <h2>Discutons</h2>
     <p>Je cherche mon premier poste d'ingénieur data pour 2027 et j'échange volontiers avec des PME de l'énergie et de l'environnement en Occitanie. Le plus simple est de m'écrire sur LinkedIn.</p>
@@ -284,5 +172,162 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
   </div>
 </div>
 
+<script>
+/* =====================================================================
+   FRISE CHRONOLOGIQUE
+   Pour ajouter / modifier une étape : édite simplement la liste ci-dessous.
+   - lane : "Formation", "Expériences" ou "Projets"
+   - row  : 0 ou 1 (deuxième ligne quand deux étapes se chevauchent)
+   - from / to : "AAAA-MM" ; to: "now" pour une étape en cours
+   - img, link : facultatifs
+   ===================================================================== */
+const ETAPES = [
+  { lane:"Formation", row:0, from:"2021-09", to:"2024-06", label:"IUT Mesures Physiques",
+    kind:"Formation, Bordeaux, 2021 à 2024", title:"BUT Mesures Physiques",
+    text:"Parcours international, option matériaux et contrôle physico-chimique." },
+  { lane:"Formation", row:1, from:"2022-12", to:"2023-04", label:"ETS Montréal",
+    kind:"Échange universitaire, décembre 2022 à avril 2023", title:"École de technologie supérieure, Montréal",
+    text:"Un semestre en génie mécanique au Canada." },
+  { lane:"Formation", row:0, from:"2024-09", to:"2027-08", label:"ISAE-Supaero",
+    kind:"Formation, Toulouse, 2024 à 2027", title:"Diplôme d'ingénieur ISAE-Supaero",
+    text:"Industrialisation et méthodes pour l'aéronautique et l'espace, en alternance chez Airbus." },
+
+  { lane:"Expériences", row:0, from:"2023-05", to:"2023-08", label:"Stage CNRS", cls:"exp",
+    kind:"Stage de recherche, mai à juillet 2023", title:"CNRS, Archéosciences Bordeaux",
+    text:"Mesurer la dureté des matériaux par spectrométrie de plasma induite par laser (LIBS).",
+    img:"images/libs-schema.jpg", link:"experiences.html#cnrs" },
+  { lane:"Expériences", row:0, from:"2024-03", to:"2024-07", label:"Airbus Defence and Space", cls:"exp",
+    kind:"Stage, mars à juin 2024", title:"Airbus Defence and Space, Toulouse",
+    text:"Contamination des satellites : validation d'une nouvelle solution d'étalonnage d'un spectromètre FTIR en salle blanche.",
+    img:"images/airbus-ds-satellite.jpg", link:"experiences.html#airbus-ds" },
+  { lane:"Expériences", row:1, from:"2024-09", to:"2027-08", label:"Alternance Airbus, FAL A350", cls:"exp",
+    kind:"Alternance, 2024 à 2027", title:"Ingénieur data, FAL A350, Airbus",
+    text:"Business Data Analyst sur Skywise (Palantir Foundry) : applications et tableaux de bord utilisés en production.",
+    img:"images/fal-a350.jpg", link:"experiences.html#airbus-alternance" },
+  { lane:"Expériences", row:0, from:"2026-04", to:"2026-05", label:"Mobilité Hambourg", cls:"exp",
+    kind:"Mobilité internationale, avril 2026, 6 semaines", title:"Airbus Aerostructures GmbH, Hambourg",
+    text:"Création et maintenance de dashboards Skywise utilisés sur les lignes A321 et A330/A350.",
+    img:"images/skywise-reliability.jpg", link:"experiences.html#hambourg" },
+
+  { lane:"Projets", row:0, from:"2023-05", to:"2023-08", label:"Recherche LIBS", cls:"proj",
+    kind:"Projet de recherche, 2023", title:"Dureté des matériaux par LIBS",
+    text:"Corréler l'intensité de raies d'émission LIBS avec la dureté d'alliages cuivreux.",
+    img:"images/libstick.png", link:"#projet-libs" },
+  /* ⚠️ Dates de BRAIN à ajuster */
+  { lane:"Projets", row:0, from:"2025-01", to:"2025-06", label:"BRAIN", cls:"proj",
+    kind:"Projet IA", title:"BRAIN : apprendre à une IA à raisonner",
+    text:"Perception des objets puis raisonnement pour retrouver la transformation d'une grille.",
+    img:"images/brain.png", link:"#projet-brain" },
+  { lane:"Projets", row:0, from:"2026-09", to:"now", label:"Plateforme Pyrénées", cls:"proj ongoing",
+    kind:"Projet personnel, en cours", title:"Aide à la décision pour les trails",
+    text:"Des données pour aider les organisateurs à dimensionner ravitaillements, navettes et scénarios météo.",
+    link:"#projet-pyrenees" }
+];
+
+const DEBUT = 2021.5, FIN = 2028.0;          // bornes de la frise
+const LANES = ["Formation", "Expériences", "Projets"];
+const ROW_H = 44;
+
+(function frise(){
+  const toYear = s => {
+    if (s === "now") { const d = new Date(); return d.getFullYear() + d.getMonth()/12; }
+    const [y, m] = s.split("-").map(Number); return y + (m-1)/12;
+  };
+  const pct = y => ((y - DEBUT) / (FIN - DEBUT) * 100);
+  const track = document.getElementById("track");
+  const lanesCol = document.getElementById("lanes");
+
+  // Axe des années + lignes verticales
+  const axis = document.createElement("div"); axis.className = "axis"; track.appendChild(axis);
+  for (let y = Math.ceil(DEBUT); y < FIN; y++) {
+    const s = document.createElement("span"); s.textContent = y; s.style.left = pct(y) + "%"; axis.appendChild(s);
+    const g = document.createElement("div"); g.className = "gridline"; g.style.left = pct(y) + "%"; track.appendChild(g);
+  }
+  const t = document.createElement("div"); t.className = "today"; t.style.left = pct(toYear("now")) + "%"; track.appendChild(t);
+
+  // Couloirs
+  LANES.forEach(name => {
+    const rows = Math.max(...ETAPES.filter(e => e.lane === name).map(e => e.row)) + 1;
+    const h = rows * ROW_H + 8;
+    const label = document.createElement("div"); label.className = "lane-name"; label.style.height = h + "px"; label.textContent = name;
+    lanesCol.appendChild(label);
+    const lane = document.createElement("div"); lane.className = "lane"; lane.style.height = h + "px";
+    ETAPES.filter(e => e.lane === name).forEach(e => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "item " + (e.cls || "");
+      b.textContent = e.label;
+      b.style.left = pct(toYear(e.from)) + "%";
+      b.style.width = (pct(toYear(e.to)) - pct(toYear(e.from))) + "%";
+      b.style.top = (8 + e.row * ROW_H) + "px";
+      b.setAttribute("aria-controls", "peek"); b.setAttribute("aria-expanded", "false");
+      b._etape = e;
+      lane.appendChild(b);
+    });
+    track.appendChild(lane);
+  });
+
+  // Carte d'aperçu
+  const peek = document.getElementById("peek");
+  const pImg = document.getElementById("peek-img"), pKind = document.getElementById("peek-kind"),
+        pTitle = document.getElementById("peek-title"), pText = document.getElementById("peek-text"),
+        pLink = document.getElementById("peek-link");
+  let current = null, hideTimer = null, lastPointer = "mouse", shownAt = 0;
+  const sheet = () => matchMedia("(max-width:640px)").matches;
+
+  function show(btn){
+    clearTimeout(hideTimer);
+    if (current && current !== btn) current.setAttribute("aria-expanded", "false");
+    if (current !== btn || peek.hidden) shownAt = Date.now();
+    const e = btn._etape; current = btn;
+    btn.setAttribute("aria-expanded", "true");
+    if (e.img) { pImg.src = e.img; pImg.hidden = false; } else { pImg.hidden = true; pImg.removeAttribute("src"); }
+    pKind.textContent = e.kind; pTitle.textContent = e.title; pText.textContent = e.text;
+    if (e.link) { pLink.href = e.link; pLink.hidden = false; } else { pLink.hidden = true; }
+    peek.hidden = false;
+    if (sheet()) return;
+    const r = btn.getBoundingClientRect(), pw = peek.offsetWidth, ph = peek.offsetHeight;
+    let left = Math.max(12, Math.min(r.left + r.width/2 - pw/2, innerWidth - pw - 12));
+    let top = r.top - ph - 10; if (top < 70) top = r.bottom + 10;
+    peek.style.left = left + "px"; peek.style.top = top + "px";
+  }
+  function hide(){
+    peek.hidden = true;
+    if (current) current.setAttribute("aria-expanded", "false");
+    current = null;
+  }
+  const hideSoon = () => { clearTimeout(hideTimer); hideTimer = setTimeout(hide, 200); };
+
+  track.addEventListener("pointerdown", ev => { lastPointer = ev.pointerType; });
+  track.addEventListener("pointerover", ev => { if (ev.pointerType !== "mouse") return; const b = ev.target.closest(".item"); if (b) show(b); });
+  track.addEventListener("pointerout", ev => { if (ev.pointerType !== "mouse") return; if (ev.target.closest(".item")) hideSoon(); });
+  track.addEventListener("focusin", ev => { const b = ev.target.closest(".item"); if (b) show(b); });
+  track.addEventListener("click", ev => {
+    const b = ev.target.closest(".item"); if (!b) return;
+    if (lastPointer === "mouse" && b._etape.link) { location.href = b._etape.link; hide(); return; }
+    if (current === b && !peek.hidden && Date.now() - shownAt > 400) hide(); else show(b);
+  });
+  peek.addEventListener("mouseenter", () => clearTimeout(hideTimer));
+  peek.addEventListener("mouseleave", () => { if (!sheet()) hideSoon(); });
+  pLink.addEventListener("click", hide);
+  document.getElementById("peek-close").addEventListener("click", hide);
+  document.addEventListener("keydown", ev => { if (ev.key === "Escape" && !peek.hidden) { const b = current; hide(); b && b.focus(); } });
+  document.addEventListener("pointerdown", ev => { if (!peek.hidden && !peek.contains(ev.target) && !ev.target.closest(".item")) hide(); });
+  document.getElementById("track-scroll").addEventListener("scroll", () => { if (!sheet()) hide(); }, { passive:true });
+  addEventListener("scroll", () => { if (!sheet() && !peek.hidden) hide(); }, { passive:true });
+})();
+
+/* =====================================================================
+   DOCUMENTS : un lien n'apparaît que si le fichier existe vraiment,
+   et la miniature est remplacée par une étiquette si l'image manque.
+   ===================================================================== */
+document.querySelectorAll(".doc-thumb").forEach(img => {
+  const ph = () => { const s = document.createElement("span"); s.className = "doc-ph"; s.textContent = img.dataset.type || "DOC"; img.replaceWith(s); };
+  if (img.complete && img.naturalWidth === 0) ph(); else img.addEventListener("error", ph);
+});
+document.querySelectorAll("a[data-doc]").forEach(a => {
+  if (location.protocol === "file:") return;           // aperçu local : on laisse tout visible
+  fetch(a.href, { method:"HEAD" }).then(r => { if (!r.ok) a.hidden = true; }).catch(() => {});
+});
+</script>
 </body>
 </html>
