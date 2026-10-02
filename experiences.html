@@ -22,21 +22,48 @@
       <a href="index.html#projets">Projets</a>
       <a href="experiences.html" aria-current="page">Expériences</a>
       <a href="index.html#competences">Compétences</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
   <div class="page-head">
-    <h1>Expériences</h1>
-    <p>De la mesure physique en laboratoire à la donnée industrielle : mes stages et mon alternance, du plus récent au plus ancien.</p>
-    <ul class="exp-index">
-      <li><a href="#airbus-alternance">Alternance Airbus</a></li>
-      <li><a href="#hambourg">Mobilité Hambourg</a></li>
-      <li><a href="#airbus-ds">Airbus Defence and Space</a></li>
-      <li><a href="#cnrs">CNRS</a></li>
-    </ul>
+    <div>
+      <h1>Expériences</h1>
+      <p>De la mesure physique en laboratoire à la donnée industrielle : mes stages et mon alternance, du plus récent au plus ancien.</p>
+      <ul class="exp-index">
+        <li><a href="#airbus-alternance">Alternance Airbus</a></li>
+        <li><a href="#hambourg">Mobilité Hambourg</a></li>
+        <li><a href="#airbus-ds">Airbus Defence and Space</a></li>
+        <li><a href="#cnrs">CNRS</a></li>
+      </ul>
+    </div>
+    <!-- Parcours en images : chaque rond mène à sa section. Positions en % (left, top) modifiables. -->
+    <nav class="xp-map" aria-label="Parcours en images">
+      <svg viewBox="0 0 460 400" aria-hidden="true">
+        <defs><marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>
+        <path d="M152 78 Q 215 30 272 82" marker-end="url(#fl)"/>
+        <path d="M278 120 Q 200 165 160 236" marker-end="url(#fl)"/>
+        <path d="M186 302 Q 245 345 300 308" marker-end="url(#fl)"/>
+      </svg>
+      <a class="xp-node" href="#cnrs" style="left:19%; top:22%">
+        <span class="ring"><img src="images/cnrs-libs-setup.jpg" alt=""></span>
+        <span class="cap">CNRS<small>2023, recherche LIBS</small></span>
+      </a>
+      <a class="xp-node" href="#airbus-ds" style="left:73%; top:24%">
+        <span class="ring"><img src="images/airbus-ds-satellite.jpg" alt=""></span>
+        <span class="cap">Airbus DS<small>2024, satellites</small></span>
+      </a>
+      <a class="xp-node" href="#airbus-alternance" style="left:27%; top:72%">
+        <span class="ring"><img src="images/fal-a350.jpg" alt=""></span>
+        <span class="cap">Alternance Airbus<small>2024 à 2027, FAL A350</small></span>
+      </a>
+      <a class="xp-node" href="#hambourg" style="left:79%; top:74%">
+        <span class="ring"><img src="images/skywise-reliability.jpg" alt=""></span>
+        <span class="cap">Hambourg<small>2026, Skywise</small></span>
+      </a>
+    </nav>
   </div>
 
   <!-- ============ Alternance ============ -->
@@ -113,12 +140,18 @@
     <div>
       <h2>Mesurer la dureté par LIBS</h2>
       <p class="org">CNRS, Archéosciences Bordeaux (UMR 6034)</p>
-      <p>Ce stage de recherche porte sur la mesure de la dureté des matériaux par spectrométrie de plasma induite par laser (LIBS). Certaines raies d'émission des matériaux seraient directement corrélées à leur dureté : mon travail a consisté en une campagne de mesures et d'investigations pour vérifier ce postulat.</p>
+      <p>Ce stage de dix semaines porte sur la mesure de la dureté des matériaux par spectrométrie de plasma induite par laser (LIBS). Certaines raies d'émission des matériaux seraient directement corrélées à leur dureté : mon travail a consisté en une campagne de mesures et d'investigations pour vérifier ce postulat.</p>
       <p><a class="link-proj" href="index.html#projet-libs">Voir le projet et les documents associés</a></p>
-      <figure>
-        <img src="images/libs-schema.jpg" alt="Principe de la LIBS : un laser focalisé sur l'échantillon crée un plasma dont la lumière passe par une fibre optique et un réseau de diffraction jusqu'au détecteur" width="1400" height="686" loading="lazy">
-        <figcaption>Principe de la LIBS : un laser crée un plasma à la surface de l'échantillon, dont la lumière est analysée par un spectromètre.</figcaption>
-      </figure>
+      <div class="pair">
+        <figure>
+          <img src="images/cnrs-libs-setup.jpg" alt="Le spectromètre LIBS IVEA du laboratoire avec sa tablette de pilotage" width="900" height="675" loading="lazy">
+          <figcaption>Le dispositif de mesure LIBS du laboratoire.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/libs-schema.jpg" alt="Principe de la LIBS : un laser focalisé sur l'échantillon crée un plasma dont la lumière passe par une fibre optique et un réseau de diffraction jusqu'au détecteur" width="1400" height="686" loading="lazy">
+          <figcaption>Principe de la LIBS : un laser crée un plasma dont la lumière est analysée par un spectromètre.</figcaption>
+        </figure>
+      </div>
     </div>
   </article>
 </main>

@@ -84,20 +84,16 @@
       <h3>Sujet de recherche : mesurer la dureté d'un matériau grâce à la spectrométrie de plasma induite par laser (LIBS)</h3>
       <p class="ctx">CNRS, Archéosciences Bordeaux (UMR 6034), 2023</p>
       <dl>
-        <dt>Question</dt><dd>Peut-on estimer la dureté d'un alliage cuivreux sans essai mécanique, à partir de son spectre LIBS ?</dd>
-        <dt>Démarche</dt><dd>Acquisition de spectres par spectroscopie de plasma induit par laser (LIBS), puis recherche de corrélations entre l'intensité de certaines raies d'émission et la dureté mesurée des échantillons.</dd>
-        <dt>Livrables</dt><dd>Rapport de recherche et présentation des résultats.</dd>
+        <dt>Question</dt><dd>Peut-on estimer la dureté Vickers d'un alliage cuivreux sans prélèvement ni indentation, à partir du rapport entre raies ioniques et neutres de son spectre LIBS ?</dd>
+        <dt>Démarche</dt><dd>Deux campagnes de mesures sur cinq étalons avec deux spectromètres (IVEA et SciAps portable), tri des spectres par ACP, calcul des rapports de raies sous LIBStick, puis analyse au microscope électronique avec une macro ImageJ pour étudier l'hétérogénéité du plomb.</dd>
+        <dt>Résultat</dt><dd>Les rapports Cu II/Cu I sont classés dans l'ordre des duretés, mais la dispersion liée aux nodules de plomb empêche un étalonnage fiable : une étude de faisabilité qui identifie les verrous à lever.</dd>
       </dl>
-      <ul class="tools"><li>Spectroscopie LIBS</li><li>Analyses statistiques</li><li>Calcul d'incertitudes</li><li>LIBStick</li></ul>
+      <ul class="tools"><li>Spectroscopie LIBS</li><li>ACP</li><li>MEB et ImageJ</li><li>LIBStick (Python)</li></ul>
       <!-- Documents : chaque lien s'affiche automatiquement dès que le fichier existe dans le dossier docs/ -->
       <div class="docs">
         <a class="doc" data-doc href="docs/libs-rapport.pdf" target="_blank" rel="noopener">
           <img class="doc-thumb" src="docs/libs-rapport.jpg" alt="" data-type="PDF">
-          <span><strong>Rapport de recherche</strong><small>PDF, s'ouvre dans un nouvel onglet</small></span>
-        </a>
-        <a class="doc" data-doc href="docs/libs-presentation.pdf" target="_blank" rel="noopener">
-          <img class="doc-thumb" src="docs/libs-presentation.jpg" alt="" data-type="PDF">
-          <span><strong>Présentation</strong><small>PDF, s'ouvre dans un nouvel onglet</small></span>
+          <span><strong>Rapport de stage de recherche</strong><small>PDF, 38 pages</small></span>
         </a>
       </div>
     </div>
@@ -107,38 +103,55 @@
     <div class="fig"><img src="images/brain.png" alt="Schéma du système BRAIN : une grille d'entrée passe par un module de perception (géométrie, couleur) puis un module de raisonnement qui produit la grille de sortie" width="1762" height="766" loading="lazy"></div>
     <div>
       <h3>BRAIN : apprendre à une IA à raisonner</h3>
-      <p class="ctx">Bringing Reasoning to Artificial Intelligence Networks</p>
+      <p class="ctx">Projet R&amp;D de 2e année, ISAE-Supaero, 2025-2026, avec Selen Erden</p>
       <dl>
-        <dt>Question</dt><dd>Comment une IA peut-elle trouver la règle qui transforme une grille de pixels en une autre, comme le ferait un humain ?</dd>
-        <dt>Démarche</dt><dd>Une architecture en deux temps. La perception extrait les objets de la grille (géométrie, couleur) ; le raisonnement les apparie entre entrée et sortie pour en déduire la transformation.</dd>
-        <dt>Livrables</dt><dd>Système fonctionnel et soutenance.</dd>
+        <dt>Question</dt><dd>Les grands modèles d'IA peinent sur le benchmark ARC, qui teste le raisonnement abstrait. Un système à règles explicites, transparent, peut-il déduire seul la transformation entre deux grilles ?</dd>
+        <dt>Démarche</dt><dd>Une architecture « boîte de verre » en Python : la perception extrait les objets (connexité à 8 voisins, détection des trous), le raisonnement les apparie et teste des hypothèses de la plus simple à la plus complexe (couleur, translation, rotation, symétrie, remplissage). Un générateur d'examens aléatoires et un tableau de bord mesurent les performances.</dd>
+        <dt>Résultat</dt><dd>90 % de réussite sur des examens synthétiques en aveugle, et une matrice de confusion qui localise précisément les limites (remplissages complexes, rotation combinée à une translation).</dd>
       </dl>
-      <ul class="tools"><li>Intelligence artificielle</li><li>Raisonnement symbolique</li><li>Vision par objets</li></ul>
+      <ul class="tools"><li>Python</li><li>IA symbolique</li><li>pandas, seaborn</li><li>Benchmark ARC</li></ul>
       <div class="docs">
-        <a class="doc" data-doc href="docs/brain-soutenance.pdf" target="_blank" rel="noopener">
-          <img class="doc-thumb" src="docs/brain-soutenance.jpg" alt="" data-type="PDF">
-          <span><strong>Diaporama de soutenance</strong><small>PDF, s'ouvre dans un nouvel onglet</small></span>
+        <a class="doc" data-doc href="docs/brain-rapport.pdf" target="_blank" rel="noopener">
+          <img class="doc-thumb" src="docs/brain-rapport.jpg" alt="" data-type="PDF">
+          <span><strong>Article de recherche</strong><small>PDF, en anglais</small></span>
+        </a>
+        <a class="doc" data-doc href="docs/brain-presentation.pdf" target="_blank" rel="noopener">
+          <img class="doc-thumb wide" src="docs/brain-presentation.jpg" alt="" data-type="PDF">
+          <span><strong>Présentation de soutenance</strong><small>PDF, février 2026</small></span>
         </a>
       </div>
     </div>
   </article>
 
   <article class="project" id="projet-pyrenees">
-    <div class="fig">
-      <svg viewBox="0 0 420 200" role="img" aria-label="Profil d'altitude d'un trail avec trois ravitaillements">
-        <path d="M10 170 L60 150 L95 90 L130 110 L175 40 L215 75 L250 60 L290 120 L330 100 L370 150 L410 165 L410 185 L10 185 Z" fill="var(--rule)" opacity=".45"/>
-        <path d="M10 170 L60 150 L95 90 L130 110 L175 40 L215 75 L250 60 L290 120 L330 100 L370 150 L410 165" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
-        <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--muted)" text-anchor="middle">
-          <circle cx="95" cy="90" r="6" fill="var(--signal)"/><text x="95" y="72">Ravito 1</text>
-          <circle cx="215" cy="75" r="6" fill="var(--signal)"/><text x="215" y="97">Ravito 2</text>
-          <circle cx="330" cy="100" r="6" fill="var(--signal)"/><text x="330" y="82">Ravito 3</text>
+    <div class="fig dash">
+      <svg viewBox="0 0 440 300" role="img" aria-label="Maquette de l'outil : profil d'altitude du trail avec zones d'affluence prévue aux ravitaillements et alerte météo">
+        <rect x="0" y="0" width="440" height="300" fill="var(--paper)"/>
+        <rect x="0" y="0" width="440" height="38" fill="var(--mist)"/>
+        <text x="16" y="24" font-family="IBM Plex Sans Condensed, Arial Narrow, sans-serif" font-weight="600" font-size="14" fill="var(--ink)">Trail des Pyrénées, jour J</text>
+        <text x="424" y="24" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--muted)">Prévision 6h00</text>
+        <rect x="68" y="52" width="56" height="128" fill="var(--signal)" opacity=".14"/>
+        <rect x="170" y="52" width="76" height="128" fill="var(--signal)" opacity=".32"/>
+        <path d="M16 170 L60 158 L96 120 L128 132 L170 76 L206 98 L240 84 L278 92 L312 64 L350 128 L390 120 L424 160 L424 180 L16 180 Z" fill="var(--rule)" opacity=".5"/>
+        <path d="M16 170 L60 158 L96 120 L128 132 L170 76 L206 98 L240 84 L278 92 L312 64 L350 128 L390 120 L424 160" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linejoin="round"/>
+        <line x1="16" y1="180" x2="424" y2="180" stroke="var(--rule)" stroke-width="1.5"/>
+        <g font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="var(--muted)" text-anchor="middle">
+          <circle cx="96" cy="120" r="5.5" fill="var(--accent)"/><text x="96" y="108">R1</text>
+          <circle cx="206" cy="98" r="5.5" fill="var(--accent)"/><text x="206" y="86">R2</text>
+          <circle cx="350" cy="128" r="5.5" fill="var(--accent)"/><text x="350" y="148">R3</text>
+          <text x="96" y="196">affluence moyenne</text><text x="208" y="196">pic d'affluence</text>
         </g>
-        <line x1="10" y1="185" x2="410" y2="185" stroke="var(--rule)" stroke-width="1.5"/>
+        <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)">
+          <text x="16" y="222">R1</text><rect x="40" y="213" width="180" height="11" rx="2" fill="var(--mist)"/><rect x="40" y="213" width="70" height="11" rx="2" fill="var(--accent)" opacity=".55"/><text x="230" y="222" fill="var(--muted)">180 coureurs/h, 9h-10h</text>
+          <text x="16" y="242">R2</text><rect x="40" y="233" width="180" height="11" rx="2" fill="var(--mist)"/><rect x="40" y="233" width="160" height="11" rx="2" fill="var(--signal)"/><text x="230" y="242" fill="var(--muted)">420 coureurs/h, pic à 11h</text>
+        </g>
+        <rect x="16" y="258" width="408" height="30" rx="6" fill="var(--signal)" opacity=".18"/>
+        <text x="28" y="277" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="var(--ink)">Orage probable à 14h : préparer le parcours de repli après R3</text>
       </svg>
     </div>
     <div>
       <h3>Aider les organisateurs de trails à décider <span class="status">En cours</span></h3>
-      <p class="ctx">Projet personnel, Pyrénées ariégeoises et Hautes-Pyrénées</p>
+      <p class="ctx">Projet personnel, Pyrénées ariégeoises et Hautes-Pyrénées. Maquette indicative, données fictives.</p>
       <dl>
         <dt>Question</dt><dd>Les données d'éditions passées, de météo et d'inscriptions peuvent-elles aider un organisateur à dimensionner ses ravitaillements, ses navettes et ses scénarios de repli ?</dd>
         <dt>Démarche</dt><dd>Entretiens avec des organisateurs pour comprendre leurs vraies difficultés, puis prototype d'outil d'aide à la décision.</dd>
@@ -152,8 +165,8 @@
   <h2>Compétences</h2>
   <p class="lede">Ce que j'utilise au quotidien et ce que je sais mettre en œuvre.</p>
   <div class="skills">
-    <div><h3>Données et outils</h3><ul><li>Skywise / Palantir Foundry</li><li>Excel avancé</li><li>Analyses statistiques</li><li>ImageJ</li></ul></div>
-    <div><h3>Mesure et matériaux</h3><ul><li>Spectroscopie : LIBS, IR, FTIR, UV-visible</li><li>Chromatographie</li><li>Calcul d'incertitudes</li><li>Contrôle qualité</li></ul></div>
+    <div><h3>Données et outils</h3><ul><li>Skywise / Palantir Foundry</li><li>Python (pandas, matplotlib, seaborn)</li><li>Excel avancé, analyses statistiques</li><li>ImageJ</li></ul></div>
+    <div><h3>Physique générale</h3><ul><li>Spectroscopies : LIBS, IR, FTIR, UV-visible</li><li>Optique</li><li>Calcul d'incertitudes</li><li>Contrôle qualité</li></ul></div>
     <div><h3>Ingénierie</h3><ul><li>CATIA V5 (environ 300 h)</li><li>SolidWorks</li><li>Industrialisation aéronautique</li><li>Anglais courant</li></ul></div>
   </div>
 </div></section>
@@ -173,6 +186,25 @@
 </div>
 
 <script>
+/* =====================================================================
+   MENU : surligne l'onglet de la section affichée à l'écran
+   ===================================================================== */
+(function(){
+  const links = [...document.querySelectorAll('.menu a[href^="index.html#"]')];
+  const map = new Map(links.map(a => [a.hash.slice(1), a]));
+  const seen = new Set();
+  const update = () => {
+    links.forEach(a => a.removeAttribute("aria-current"));
+    const ids = [...map.keys()].filter(id => seen.has(id));
+    if (ids.length) map.get(ids[ids.length - 1]).setAttribute("aria-current", "location");
+  };
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id));
+    update();
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  map.forEach((a, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+})();
+
 /* =====================================================================
    FRISE CHRONOLOGIQUE
    Pour ajouter / modifier une étape : édite simplement la liste ci-dessous.
@@ -195,7 +227,7 @@ const ETAPES = [
   { lane:"Expériences", row:0, from:"2023-05", to:"2023-08", label:"Stage CNRS", cls:"exp",
     kind:"Stage de recherche, mai à juillet 2023", title:"CNRS, Archéosciences Bordeaux",
     text:"Mesurer la dureté des matériaux par spectrométrie de plasma induite par laser (LIBS).",
-    img:"images/libs-schema.jpg", link:"experiences.html#cnrs" },
+    img:"images/cnrs-libs-setup.jpg", link:"experiences.html#cnrs" },
   { lane:"Expériences", row:0, from:"2024-03", to:"2024-07", label:"Airbus Defence and Space", cls:"exp",
     kind:"Stage, mars à juin 2024", title:"Airbus Defence and Space, Toulouse",
     text:"Contamination des satellites : validation d'une nouvelle solution d'étalonnage d'un spectromètre FTIR en salle blanche.",
@@ -213,10 +245,9 @@ const ETAPES = [
     kind:"Projet de recherche, 2023", title:"Dureté des matériaux par LIBS",
     text:"Corréler l'intensité de raies d'émission LIBS avec la dureté d'alliages cuivreux.",
     img:"images/libstick.png", link:"#projet-libs" },
-  /* ⚠️ Dates de BRAIN à ajuster */
-  { lane:"Projets", row:0, from:"2025-01", to:"2025-06", label:"BRAIN", cls:"proj",
-    kind:"Projet IA", title:"BRAIN : apprendre à une IA à raisonner",
-    text:"Perception des objets puis raisonnement pour retrouver la transformation d'une grille.",
+  { lane:"Projets", row:0, from:"2025-09", to:"2026-03", label:"BRAIN", cls:"proj",
+    kind:"Projet R&D ISAE-Supaero, soutenu en février 2026", title:"BRAIN : apprendre à une IA à raisonner",
+    text:"Un système à règles explicites qui déduit seul les transformations de grilles du benchmark ARC : 90 % de réussite en aveugle.",
     img:"images/brain.png", link:"#projet-brain" },
   { lane:"Projets", row:0, from:"2026-09", to:"now", label:"Plateforme Pyrénées", cls:"proj ongoing",
     kind:"Projet personnel, en cours", title:"Aide à la décision pour les trails",

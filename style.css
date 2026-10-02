@@ -36,7 +36,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal); outline-of
 .menu::-webkit-scrollbar{display:none}
 .menu a{padding:8px 12px; border-radius:6px; color:var(--ink); text-decoration:none; font-size:0.95rem; white-space:nowrap}
 .menu a:hover{background:var(--paper)}
-.menu a[aria-current="page"]{background:var(--ink); color:var(--mist)}
+.menu a[aria-current]{background:var(--ink); color:var(--mist)}
 
 /* ---------- Boutons ---------- */
 .actions{display:flex; flex-wrap:wrap; gap:10px}
@@ -103,6 +103,7 @@ h2{font:700 clamp(1.9rem,4vw,2.6rem)/1.1 var(--cond); margin:0 0 8px}
 .fig{background:var(--paper); border:1px solid var(--rule); border-radius:10px; padding:20px; display:flex; align-items:center; justify-content:center; min-height:220px}
 .fig.logo img{max-width:200px}
 .fig svg{width:100%; height:auto}
+.fig.dash{padding:0; overflow:hidden; display:block}
 .project h3{font:600 1.55rem/1.2 var(--cond); margin:0 0 4px}
 .ctx{color:var(--muted); font-size:0.95rem; margin:0 0 18px}
 .status{display:inline-block; font:500 0.8rem var(--sans); color:var(--accent); border:1px solid currentColor; border-radius:99px; padding:1px 10px; margin-left:8px; vertical-align:middle}
@@ -116,8 +117,9 @@ h2{font:700 clamp(1.9rem,4vw,2.6rem)/1.1 var(--cond); margin:0 0 8px}
 .docs{display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 0}
 .doc{display:flex; align-items:center; gap:12px; padding:8px 14px 8px 8px; background:var(--paper); border:1px solid var(--rule); border-radius:8px; text-decoration:none; color:var(--ink); max-width:100%}
 .doc:hover{border-color:var(--ink)}
-.doc-thumb{width:64px; height:46px; border-radius:4px; object-fit:cover; flex:none; border:1px solid var(--rule)}
-.doc-ph{width:64px; height:46px; border-radius:4px; flex:none; display:flex; align-items:center; justify-content:center; font:700 0.8rem var(--cond); letter-spacing:.04em; color:var(--paper); background:var(--accent)}
+.doc-thumb{width:56px; height:72px; border-radius:4px; object-fit:cover; object-position:top; flex:none; border:1px solid var(--rule); background:#fff}
+.doc-thumb.wide{width:96px; height:54px}
+.doc-ph{width:56px; height:72px; border-radius:4px; flex:none; display:flex; align-items:center; justify-content:center; font:700 0.8rem var(--cond); letter-spacing:.04em; color:var(--paper); background:var(--accent)}
 .doc strong{display:block; font-size:0.93rem; font-weight:500}
 .doc small{color:var(--muted); font-size:0.8rem}
 
@@ -128,7 +130,18 @@ h2{font:700 clamp(1.9rem,4vw,2.6rem)/1.1 var(--cond); margin:0 0 8px}
 .skills li{padding:7px 0; border-bottom:1px solid var(--rule); font-size:0.97rem}
 
 /* ---------- Page Expériences ---------- */
-.page-head{padding:56px 0 8px}
+.page-head{padding:40px 0 8px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,460px); gap:32px; align-items:center}
+/* Parcours en images (en-tête) */
+.xp-map{position:relative; width:100%; aspect-ratio:460/400}
+.xp-map svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.xp-map path{fill:none; stroke:var(--muted); stroke-width:1.6; stroke-dasharray:5 5}
+.xp-node{position:absolute; width:26%; transform:translate(-50%,-50%); text-align:center; text-decoration:none; color:var(--ink)}
+.xp-node .ring{display:block; aspect-ratio:1; border-radius:50%; overflow:hidden; border:3px solid var(--paper); box-shadow:0 0 0 1.5px var(--rule); transition:transform .2s ease, box-shadow .2s ease}
+.xp-node img{width:100%; height:100%; object-fit:cover}
+.xp-node .cap{position:absolute; top:100%; left:-25%; right:-25%; margin-top:8px; font:600 0.95rem/1.2 var(--cond)}
+.xp-node .cap small{display:block; font:400 0.8rem var(--sans); color:var(--muted)}
+.xp-node:hover .ring,.xp-node:focus-visible .ring{transform:scale(1.07); box-shadow:0 0 0 3px var(--accent)}
+.xp-node:hover .cap{color:var(--accent)}
 .page-head p{color:var(--muted); max-width:60ch; margin:12px 0 0}
 .exp-index{display:flex; flex-wrap:wrap; gap:8px; margin:28px 0 0; padding:0; list-style:none}
 .exp-index a{display:block; padding:6px 12px; border:1px solid var(--rule); border-radius:99px; background:var(--paper); color:var(--ink); text-decoration:none; font-size:0.9rem}
@@ -176,6 +189,10 @@ footer{font-size:0.85rem; opacity:.6; margin-top:40px}
   .project:nth-of-type(even) .fig{order:0}
   .skills{grid-template-columns:1fr; gap:36px}
   .xp{grid-template-columns:1fr; gap:12px}
+  .page-head{grid-template-columns:1fr; gap:8px}
+  .xp-map{max-width:420px; margin:12px auto 0}
+  .xp-node .cap{font-size:0.82rem}
+  .xp-node .cap small{display:none}
   .xp-when{position:static}
   .xp .pair{grid-template-columns:1fr}
 }
